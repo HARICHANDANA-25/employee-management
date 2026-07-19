@@ -64,3 +64,9 @@ jobs:
           app-name: 'employee-management-app'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_14CBBB8734514DADAEC7A285E8AC7416 }}
+  - name: Deploy to Azure WebApp
+  uses: azure/webapps-deploy@v2
+  with:
+    app-name: employee-management-app
+    publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+    package: .
