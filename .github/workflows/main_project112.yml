@@ -64,3 +64,9 @@ jobs:
           app-name: 'PROJECT112'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8142980235A4CDCA131867E5E885F34 }}
+          - name: Deploy to Azure WebApp
+  uses: azure/webapps-deploy@v2
+  with:
+    app-name: project112-b0h5d6bhgxduf9f5
+    publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+    package: .
